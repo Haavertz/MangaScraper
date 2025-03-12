@@ -1,11 +1,25 @@
 {
   "sites": [
     {
+      "name": "Asura",
+      "url": "https://asuracomic.net",
+      "container": ["div", "grid grid-rows-1 grid-cols-1 sm:grid-cols-2"],
+      "selector": ["span", "font-medium"],
+      "type": "css"
+    },
+    {
         "name": "Manhastro",
         "url": "https://manhastro.com",
         "container": ["div", "row row-eq-height"],
         "selector": ["h3", "h5"],
         "type" : "css"
-    }
+    },
+    {
+      "name": "Seita Celestial",
+      "url": "https://seitacelestial.com",
+      "container": ["div", "listupd"],
+      "selector": ["a", "series"],
+      "type": "css"
+      }
   ]
 }
