@@ -1,4 +1,4 @@
-# 🚀 Manga Update Checker (Automático)
+# 🚀 MangaScraper (Automático)
 
 Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usando GitHub Actions. Ideal para acompanhar suas séries favoritas!
 
@@ -21,8 +21,8 @@ Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usa
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/manga-checker.git
-   cd manga-checker
+   git clone https://github.com/Haavertz/MangaScraper.git
+   cd MangaScraper
 2. **Instale as Dependências**
    ```bash
    pip install -r requirements.txt
@@ -126,4 +126,4 @@ Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usa
 
 ## ⚠️ Aviso
     Respeite o robots.txt dos sites.
-    O Projeto esta se iniciando tem muito o que melhorar.
+    O Projeto esta se iniciando tem muito o que
