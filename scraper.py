@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime
 
-URL = "https://seitacelestial.com/"
+URL = "https://slimeread.com/"
 
 def get_last_manga():
     headers = {
@@ -17,22 +18,22 @@ def get_last_manga():
             ("div", "post-title"),
             ("div", "styletwo"),
             ("div", "utao"),
+            ("span", "text-[15px] font-medium hover:text-themecolor hover:cursor-pointer"),
+            ("a", "tw-wt dark:dark tw-vc tw-ke tw-qa tw-zp"),
             ("a", "manga-title"),
             ("h3", "chapter-title")
         ]
 
-        for tag, class_name in possible_selectors:
-            element = soup.find(tag, class_=class_name)
-            if element:
-                last_manga = element.text.strip().splitlines()[0]
-                
-                with open("last_manga.txt", "w", encoding="utf-8") as f:
-                    f.write(last_manga)
-                return last_manga
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        current_day = datetime.now().strftime("%A")  
+        with open("last_manga.txt", "a", encoding="utf-8") as f:
+            for tag, class_name in possible_selectors:
+                element = soup.find(tag, class_=class_name)
+                if element:
+                    last_manga = element.text.strip().splitlines()[0]
+                    f.write(f"{current_date} ({current_day}) - {last_manga}\n")
+                    return last_manga
 
-        with open("site_content.html", "w", encoding="utf-8") as f:
-            f.write(soup.prettify())
-        
         print("No title found. Check the 'site_content.html' file.")
         return None
     else:
