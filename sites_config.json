@@ -1,16 +1,11 @@
 {
     "sites": [
       {
-        "name": "SiteA",
-        "url": "https://exemplo-site-a.com/latest",
-        "selector": ".manga-list .title:first-child",
+        "name": "Manhastro",
+        "url": "https://manhastro.com/",
+        "container": ["div", "row row-eq-height"],
+        "selector": ["h3", "h5"],
         "type": "css"
-      },
-      {
-        "name": "SiteB",
-        "url": "https://exemplo-site-b.com/updates",
-        "selector": "//div[@class='latest-manga']/h2",
-        "type": "xpath"
       }
     ]
   }
