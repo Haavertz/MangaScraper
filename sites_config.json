@@ -1,10 +1,10 @@
 {
   "sites": [
     {
-        "name": "TestSiteExemplo",
-        "url": "https://site.com/latest",
-        "container": ["container", "class"],
-        "selector": ["element", "class"],
+        "name": "Manhastro",
+        "url": "https://manhastro.com",
+        "container": ["div", "row row-eq-height"],
+        "selector": ["h3", "h5"],
         "type" : "css"
     }
   ]
