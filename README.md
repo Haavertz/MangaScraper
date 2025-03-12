@@ -1,6 +1,7 @@
 # 🚀 MangaScraper (Automático)
 
 Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usando GitHub Actions. Ideal para acompanhar suas séries favoritas!
+
 **Lembrando que esse software só serve para VERIFICAR se tem capitulo novo, caso queira ler tera que ir ler no site oficial da Scan.**
 
 
