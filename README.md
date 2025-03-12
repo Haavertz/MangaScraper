@@ -2,7 +2,7 @@
 
 Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usando GitHub Actions. Ideal para acompanhar suas séries favoritas!
 
-**Lembrando que esse software só serve para VERIFICAR se tem capitulo novo, caso queira ler tera que ir ler no site oficial da Scan.**
+**Lembrando que este software serve apenas para VERIFICAR se há capítulo novo. Caso queira ler, será necessário acessar o site oficial da Scan.**
 
 
 ## ⚡ Funcionalidades
@@ -118,5 +118,5 @@ Um bot que verifica sites de mangá a cada hora e detecta novos lançamentos usa
 5. Abra um Pull Request.
 
 ## ⚠️ Aviso
-Respeite o robots.txt dos sites.
-O projeto está em estágio inicial e muitas mudanças ainda ocorrerão.
+1. Respeite o robots.txt dos sites.
+2. O projeto está em estágio inicial e muitas mudanças ainda ocorrerão.
