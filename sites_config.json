@@ -1,6 +1,13 @@
 {
   "sites": [
     {
+      "name": "Seita Celestial",
+      "url": "https://seitacelestial.com",
+      "container": ["div", "postbody"],
+      "selector": ["a", "series"],
+      "type": "css"
+    },
+    {
       "name": "Asura",
       "url": "https://asuracomic.net",
       "container": ["div", "grid grid-rows-1 grid-cols-1 sm:grid-cols-2"],
@@ -15,11 +22,11 @@
         "type" : "css"
     },
     {
-      "name": "Seita Celestial",
-      "url": "https://seitacelestial.com",
-      "container": ["div", "listupd"],
-      "selector": ["a", "series"],
+      "name": "Slime Read",
+      "url": "https://slimeread.com",
+      "container": ["div", "tw-qw tw-fq tw-yaa tw-en tw-hc transition tw-lp tw-tv tw-zj transition tw-lp tw-dda"], 
+      "selector": ["a", "tw-wt dark:dark tw-vc tw-ke tw-qa tw-qaa"], 
       "type": "css"
-      }
+    }
   ]
 }
