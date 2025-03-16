@@ -1,18 +1,3 @@
 {
-   "sites": {
-      "Asura": [
-         {
-            "Title": "Bad Born Blood",
-            "Url": "https://asuracomic.net/series/bad-born-blood-2c6438f6",
-            "Time": "2025-03-13"
-         }
-      ],
-      "Manhastro": [
-         {
-            "Title": "All My Alter Egos Are Tycoons",
-            "Url": "https://manhastro.com/lermanga/all-my-alter-egos-are-tycoons/",
-            "Time": "2025-03-13"
-         }
-      ]
-   }
+   "sites": {}
 }

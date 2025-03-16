@@ -3,7 +3,7 @@
     {
       "name": "Seita Celestial",
       "url": "https://seitacelestial.com",
-      "container": ["div", "postbody"],
+      "container": ["div", "uta"],
       "selector": ["a", "series"],
       "type": "css"
     },
@@ -24,8 +24,8 @@
     {
       "name": "Slime Read",
       "url": "https://slimeread.com",
-      "container": ["div", "tw-qw tw-fq tw-yaa tw-en tw-hc transition tw-lp tw-tv tw-zj transition tw-lp tw-dda"], 
-      "selector": ["a", "tw-wt dark:dark tw-vc tw-ke tw-qa tw-qaa"], 
+      "container": ["div", "grid tw-kr tw-kca tw-ufa tw-jm tw-cm tw-vl tw-ym tw-nj tw-gx"], 
+      "selector": ["a", "tw-wt dark:dark tw-vc tw-ke tw-qa tw-zp"], 
       "type": "css"
     }
   ]
