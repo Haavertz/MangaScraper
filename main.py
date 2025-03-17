@@ -1,4 +1,4 @@
-from scraper import check_updates
+from .src.scraper.scraper import check_updates
 
 if __name__ == "__main__":
     new_updates = check_updates()
