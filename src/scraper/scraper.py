@@ -68,7 +68,7 @@ def get_latest_manga(site_config):
 
 def check_updates():
     try:
-        with open('last_updates.json', 'r') as f:
+        with open('./src/json/last_updates.json', 'r') as f:
             last_updates = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         last_updates = {"sites": {}}
@@ -92,7 +92,7 @@ def check_updates():
     if updates["sites"]:
         last_updates["sites"].update(updates["sites"])
         
-        with open('last_updates.json', 'w') as f:
+        with open('./src/json/last_updates.json', 'w') as f:
             json.dump(last_updates, f, indent=3)
         return updates
     return None
