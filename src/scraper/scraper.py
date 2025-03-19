@@ -1,6 +1,7 @@
 import json
 import requests
 import discord
+import unicodedata
 from discord.ext import commands
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -26,6 +27,7 @@ def get_latest_manga(site_config):
     if site_config['type'] == 'css':
         soup = BeautifulSoup(response.text, 'html.parser')
         current_date = datetime.now().strftime("%Y-%m-%d")
+        time_now = datetime.now().strftime("%H:%M:%S")
 
         container = site_config['container']
         element = site_config['selector']
@@ -54,17 +56,36 @@ def get_latest_manga(site_config):
         for elem in element_inside_container:
             link = elem if elem.name == 'a' else elem.find('a')
             if link:
-                title = link.get_text(strip=True)
+                title = unicodedata.normalize("NFKD", link.get_text(strip=True)).encode("ASCII", "ignore").decode("ASCII").title()
                 url = urljoin(site_config['url'], link.get('href'))
-                results.append({"Title": title, "Url": url, "Time": current_date})
-        
-        return results[:1] if results else None
+                results.append({"Title": title, "Url": url, "Time": current_date, "Hours": time_now})
+
+
+        idx = verify_manga_read(results, site_config)
+        return results[0:idx:1] if results else None
 
     elif site_config['type'] == 'xpath':
         tree = html.fromstring(response.text)
         elements = tree.xpath(site_config['selector'])
         return elements[0].text.strip() if elements else None
     
+
+def verify_manga_read(manga, site_name):
+
+    with open('./src/json/last_updates.json', 'r') as f:
+        last = json.load(f)
+
+    passed_manga = None
+    manga_site = last['sites'][site_name['name']][-1]['Title']
+    for idx, i in enumerate(manga):
+        title1 = unicodedata.normalize("NFKD", str(i['Title'])).encode("ASCII", "ignore").decode("ASCII").lower()
+        title2 = unicodedata.normalize("NFKD", str(manga_site)).encode("ASCII", "ignore").decode("ASCII").lower()
+        
+        if title1 == title2:
+            print(idx, i['Title'])
+            passed_manga = idx
+    
+    return passed_manga
 
 def check_updates():
     try:
@@ -79,23 +100,29 @@ def check_updates():
     for site in sites:
         site_name = site['name']
         latest_data = get_latest_manga(site)
-        
+
         if latest_data:
-            current_entry = latest_data[0]
             existing_entries = last_updates["sites"].get(site_name, [])
             
-            if current_entry not in existing_entries:
-                existing_entries.append(current_entry)
+            reversed_latest_data = list(reversed(latest_data))
+            
+            new_entries = [entry for entry in reversed_latest_data if entry not in existing_entries]
+
+            if new_entries:
+                existing_entries.extend(new_entries)
                 updates["sites"][site_name] = existing_entries
-                print(f"Novo capítulo adicionado para {site_name}!")
+                print(f"✅ Novos capítulos adicionados para {site_name}!")
 
     if updates["sites"]:
         last_updates["sites"].update(updates["sites"])
         
         with open('./src/json/last_updates.json', 'w') as f:
             json.dump(last_updates, f, indent=3)
+
         return updates
+
     return None
+
 
 @bot.event
 async def on_ready():
