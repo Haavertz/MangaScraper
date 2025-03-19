@@ -1,3 +1,44 @@
 {
-   "sites": {}
+   "sites": {
+      "Valkyrie Scan": [
+         {
+            "Title": "Little Girl",
+            "Url": "https://valkyriescan.com/manga/little-girl/",
+            "Time": "2025-03-19",
+            "Hours": "08:09:47"
+         }
+      ],
+      "Seita Celestial": [
+         {
+            "Title": "Sentido Absoluto Da Espada",
+            "Url": "https://seitacelestial.com/comics/8897284/",
+            "Time": "2025-03-19",
+            "Hours": "08:09:49"
+         }
+      ],
+      "Asura": [
+         {
+            "Title": "Reincarnation Of The Suicidal ...",
+            "Url": "https://asuracomic.net/series/reincarnation-of-the-suicidal-battle-god-587e464b",
+            "Time": "2025-03-19",
+            "Hours": "08:09:50"
+         }
+      ],
+      "Manhastro": [
+         {
+            "Title": "Return Of The Sss-Class Ranker",
+            "Url": "https://manhastro.com/lermanga/return-of-the-sss-class-ranker/",
+            "Time": "2025-03-19",
+            "Hours": "08:09:51"
+         }
+      ],
+      "Slime Read": [
+         {
+            "Title": "Bug Ego",
+            "Url": "https://slimeread.com/manga/19869/bug-ego",
+            "Time": "2025-03-19",
+            "Hours": "08:09:52"
+         }
+      ]
+   }
 }

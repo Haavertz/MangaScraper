@@ -75,16 +75,19 @@ def verify_manga_read(manga, site_name):
     with open('./src/json/last_updates.json', 'r') as f:
         last = json.load(f)
 
-    passed_manga = None
-    manga_site = last['sites'][site_name['name']][-1]['Title']
-    for idx, i in enumerate(manga):
-        title1 = unicodedata.normalize("NFKD", str(i['Title'])).encode("ASCII", "ignore").decode("ASCII").lower()
-        title2 = unicodedata.normalize("NFKD", str(manga_site)).encode("ASCII", "ignore").decode("ASCII").lower()
-        
-        if title1 == title2:
-            print(idx, i['Title'])
-            passed_manga = idx
-    
+    passed_manga = 1
+
+    try:
+        manga_site = last['sites'][site_name['name']][-1]['Title']
+        for idx, i in enumerate(manga):
+            title1 = unicodedata.normalize("NFKD", str(i['Title'])).encode("ASCII", "ignore").decode("ASCII").lower()
+            title2 = unicodedata.normalize("NFKD", str(manga_site)).encode("ASCII", "ignore").decode("ASCII").lower()
+            
+            if title1 == title2:
+                passed_manga = idx
+    except:
+        pass
+
     return passed_manga
 
 def check_updates():

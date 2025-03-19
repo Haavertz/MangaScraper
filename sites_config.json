@@ -1,11 +1,39 @@
 {
   "sites": [
     {
+      "name": "Valkyrie Scan",
+      "url": "https://valkyriescan.com",
+      "container": ["div", "page-content-listing item-big_thumbnail"],
+      "selector": ["h3", "h5"],
+      "type": "css"
+    },
+    {
+      "name": "Seita Celestial",
+      "url": "https://seitacelestial.com",
+      "container": ["div", "uta"],
+      "selector": ["div", "luf"],
+      "type": "css"
+    },
+    {
+      "name": "Asura",
+      "url": "https://asuracomic.net",
+      "container": ["div", "grid grid-rows-1 grid-cols-1 sm:grid-cols-2"],
+      "selector": ["span", "font-medium"],
+      "type": "css"
+    },
+    {
         "name": "Manhastro",
         "url": "https://manhastro.com",
         "container": ["div", "row row-eq-height"],
         "selector": ["h3", "h5"],
         "type" : "css"
+    },
+    {
+      "name": "Slime Read",
+      "url": "https://slimeread.com",
+      "container": ["div", "grid tw-kr tw-kca tw-ufa tw-jm tw-cm tw-vl tw-ym tw-nj tw-gx"], 
+      "selector": ["a", "tw-wt dark:dark tw-vc tw-ke tw-qa tw-zp"], 
+      "type": "css"
     }
   ]
 }
