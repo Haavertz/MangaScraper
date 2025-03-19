@@ -1,3 +1,68 @@
 {
-   "sites": {}
+   "sites": {
+      "Valkyrie Scan": [
+         {
+            "Title": "Our Similarities",
+            "Url": "https://valkyriescan.com/manga/our-similarities/",
+            "Time": "2025-03-19",
+            "Hours": "08:32:01"
+         }
+      ],
+      "Seita Celestial": [
+         {
+            "Title": "Sentido Absoluto Da Espada",
+            "Url": "https://seitacelestial.com/comics/8897284/",
+            "Time": "2025-03-19",
+            "Hours": "08:32:02"
+         }
+      ],
+      "Asura": [
+         {
+            "Title": "Reincarnation Of The Suicidal ...",
+            "Url": "https://asuracomic.net/series/reincarnation-of-the-suicidal-battle-god-587e464b",
+            "Time": "2025-03-19",
+            "Hours": "08:32:03"
+         }
+      ],
+      "Manhastro": [
+         {
+            "Title": "The Player Hides His Past",
+            "Url": "https://manhastro.com/lermanga/the-player-hides-his-past/",
+            "Time": "2025-03-19",
+            "Hours": "08:32:07"
+         },
+         {
+            "Title": "Star-Embracing Swordmaster",
+            "Url": "https://manhastro.com/lermanga/star-embracing-swordmaster/",
+            "Time": "2025-03-19",
+            "Hours": "08:36:43"
+         },
+         {
+            "Title": "Como Sobreviver Como Um Dragao Com Limite De Tempo",
+            "Url": "https://manhastro.com/lermanga/como-sobreviver-como-um-dragao-com-limite-de-tempo/",
+            "Time": "2025-03-19",
+            "Hours": "08:36:43"
+         },
+         {
+            "Title": "The 100Th Regression Of The Max-Level Player",
+            "Url": "https://manhastro.com/lermanga/the-100th-regression-of-the-max-level-player/",
+            "Time": "2025-03-19",
+            "Hours": "08:43:52"
+         },
+         {
+            "Title": "Return Of The Sss-Class Ranker",
+            "Url": "https://manhastro.com/lermanga/return-of-the-sss-class-ranker/",
+            "Time": "2025-03-19",
+            "Hours": "08:43:52"
+         }
+      ],
+      "Slime Read": [
+         {
+            "Title": "Bug Ego",
+            "Url": "https://slimeread.com/manga/19869/bug-ego",
+            "Time": "2025-03-19",
+            "Hours": "08:32:08"
+         }
+      ]
+   }
 }

@@ -42,15 +42,8 @@ def get_latest_manga(site_config):
         
         element_inside_container = []
         
-        if len(element) == 2:
-            elements = div_container.find_all(element[0], class_=element[1])
-            element_inside_container = elements
-
-        elif len(element) == 3:
-            parent_elements = div_container.find_all(element[0], class_=element[1])
-            for parent in parent_elements:
-                children = parent.find_all(element[2])
-                element_inside_container.extend(children)
+        elements = div_container.find_all(element[0], class_=element[1])
+        element_inside_container = elements
         
         results = []
         for elem in element_inside_container:
@@ -83,8 +76,7 @@ def verify_manga_read(manga, site_name):
             title1 = unicodedata.normalize("NFKD", str(i['Title'])).encode("ASCII", "ignore").decode("ASCII").lower()
             title2 = unicodedata.normalize("NFKD", str(manga_site)).encode("ASCII", "ignore").decode("ASCII").lower()
             
-            if title1 == title2:
-                passed_manga = idx
+            passed_manga = idx if title1 == title2 else passed_manga
     except:
         pass
 
@@ -113,19 +105,17 @@ def check_updates():
 
             if new_entries:
                 existing_entries.extend(new_entries)
-                updates["sites"][site_name] = existing_entries
+                last_updates["sites"][site_name] = existing_entries
+                updates["sites"][site_name] = new_entries
                 print(f"✅ Novos capítulos adicionados para {site_name}!")
 
     if updates["sites"]:
-        last_updates["sites"].update(updates["sites"])
-        
         with open('./src/json/last_updates.json', 'w') as f:
             json.dump(last_updates, f, indent=3)
 
         return updates
 
-    return None
-
+    return updates
 
 @bot.event
 async def on_ready():
@@ -134,9 +124,13 @@ async def on_ready():
     if channel:
         updates = check_updates()
         if updates:
-            for site_name, entries in updates["sites"].items():
-                for entry in entries[-1:]:  
-                    message = f"📢 Novo capítulo disponível em {site_name}!\n📖 {entry['Title']}\n 🔗 {entry['Url']}"
+            for site_name, new_entries in updates["sites"].items():
+                for entry in new_entries: 
+                    message = (
+                        f"📢 Novo capítulo disponível em {site_name}!\n"
+                        f"📖 {entry['Title']}\n"
+                        f"🔗 {entry['Url']}"
+                    )
                     await channel.send(message)
     else:
         print("❌ Não foi possível encontrar o canal.")
